@@ -22,12 +22,13 @@
 
 .choice-text {
     padding: 1.5rem;
+    width: 100%;
 }
-
+/*Display Feedback for correct & incorrect answers*/
 .correct {
-    background-color: #28a745;
+    background-color: #1c642d;
 }
 
 .incorrect {
-    background-color: #dc3545;
+    background-color: #a82a37;
 }

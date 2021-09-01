@@ -1,14 +1,15 @@
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 
+//set the quiz at zero/blank to start - enable counter
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuesions = [];
 
-let questions = [
-    {
+//Questions
+let questions = [{
         question: "How many permanent teeth does a dog have?",
         choice1: "32",
         choice2: "24",
@@ -90,10 +91,11 @@ let questions = [
     },
 ];
 
-//CONSTANTS
+//Constants
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 10;
+const MAX_QUESTIONS = 3;
 
+//Start of game, add to counter and move to next question
 startGame = () => {
     questionCounter = 0;
     score = 0;
@@ -106,11 +108,13 @@ getNewQuestion = () => {
         //go to the end page
         return window.location.assign('end.html');
     }
+    //Score tally
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
 
+    //Question selected - code to avoid duplication of selection
     choices.forEach((choice) => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
@@ -120,28 +124,25 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 
-choices.forEach((choice) => {
-    choice.addEventListener('click', (e) => {
-        if (!acceptingAnswers) return;
-
-        acceptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
-
-        const classToApply = 'incorrect';
-            if (selectedAnswer == currentQuestion.answer) {
-                classToApply = 'correct';
-            }
-
-        selectedChoice.parentElement.classList.add(classToApply);
-
-        setTimeout( () => {
-            selectedChoice.parentElement.classList.add(classToApply);
-            getNewQuestion();
-        }, 1000);
-
-        
+//Display feedback for correct and incorrect answers - red & green    
+choices.forEach(choice => {
+    choice.addEventListener("click", e => {
+      if (!acceptingAnswers) return;
+  
+      acceptingAnswers = false;
+      const selectedChoice = e.target;
+      const selectedAnswer = selectedChoice.dataset["number"];
+  
+      const classToApply =
+        selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+  
+      selectedChoice.parentElement.classList.add(classToApply);
+  
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply);
+        getNewQuestion();
+      }, 1000);
     });
-});
-
-startGame();
+  });
+  
+  startGame();
