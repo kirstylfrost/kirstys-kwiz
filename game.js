@@ -1,9 +1,8 @@
-const question = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choice-text'));
-const questionCounterText = document.getElementById('questionCounter');
-const scoreText = document.getElementById('score');
-
-//set the quiz at zero/blank to start - enable counter
+const question = document.getElementById("question");
+const choices = Array.from(document.getElementsByClassName("choice-text"));
+const progressText = document.getElementById("progressText");
+const scoreText = document.getElementById("score");
+const progressBarFull = document.getElementById("progressBarFull");
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -107,13 +106,15 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        //go to the end page
-        return window.location.assign('end.html');
+      //go to the end page
+      return window.location.assign("/end.html");
     }
-    //Score tally
+    //Tally score
     questionCounter++;
-    questionCounterText.innerText = questionCounter + "/" + MAX_QUESTIONS;
-
+    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    //Update the progress bar
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+  
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -139,10 +140,10 @@ choices.forEach(choice => {
   
       const classToApply =
         selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-        
-        if (classToApply === 'correct') {
-            incrementScore(CORRECT_BONUS);
-        }
+  
+      if (classToApply === "correct") {
+        incrementScore(CORRECT_BONUS);
+      }
   
         /*Creates a delay between current and next question when user has selected an answer*/ 
         selectedChoice.parentElement.classList.add(classToApply);
