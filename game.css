@@ -28,7 +28,8 @@
 /*Display Feedback for correct & incorrect answers*/
 .correct {
   background-color: #1c642d;
-}
+  
+}  
 
 .incorrect {
   background-color: #a82a37;
