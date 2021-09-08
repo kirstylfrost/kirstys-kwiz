@@ -76,10 +76,19 @@ choices.forEach((choice) => {
 
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
-            alert("Yes you are correct!");          
+            //image - correct
+            function insert(){
+                var src = document.getElementById("imagediv");
+                var img = document.createElement("img");
+                img.src = "img/eqp/"+this.apparel+"/"+this.facing+"_idle.png";
+                src.appendChild(img);
+            }
         }
+
         if (classToApply === 'incorrect') {
-            alert("That is the wrong answer!");          
+            //image - incorrect
+            var img = document.createElement("img");
+            img.src = "images/incorrect-image.webp";          
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
