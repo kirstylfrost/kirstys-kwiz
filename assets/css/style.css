@@ -1,3 +1,4 @@
+/*Backgroud styling - across all pages */
 :root {
   background-color: rgba(155, 252, 231, .6);
   font-size: 62.5%;
@@ -40,7 +41,7 @@ h3 {
   font-weight: 500;
 }
 
-/*Utilities - styling of containers - uniform across all pages*/
+/*Utilities - styling inc positioning of containers - uniform across all pages*/
 
 .container {
   width: 100vw;
@@ -124,7 +125,7 @@ h3 {
   transform: none;
 }
 
-/*Forms - end page*/
+/*Forms*/
 form {
   width: 100%;
   display: flex;
@@ -138,7 +139,7 @@ input {
   padding: 1.5rem;
   font-size: 1.8rem;
   border: none;
-  box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  box-shadow: 0 0.1rem 1.4rem 0 rgba(155, 252, 231, 0.5);
 }
 
 input::placeholder {

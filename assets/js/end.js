@@ -7,6 +7,7 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 const MAX_HIGH_SCORES = 5;
 
+//Saves High Scores - top 5 only taken
 finalScore.innerText = mostRecentScore;
 
 username.addEventListener('keyup', () => {

@@ -13,7 +13,7 @@ let availableQuesions = [];
 
 let questions = [];
 
-//Select questions from local json file
+//Select questions randomly from local json file
 fetch('questions.json')
     .then((res) => {
         return res.json();
@@ -71,35 +71,27 @@ choices.forEach((choice) => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
+        //Id's correct/incorrect answer - if correct increments score
         const classToApply =
             selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
-            //image - correct
-            function insert(){
-                var src = document.getElementById("imagediv");
-                var img = document.createElement("img");
-                img.src = "img/eqp/"+this.apparel+"/"+this.facing+"_idle.png";
-                src.appendChild(img);
-            }
+            
         }
 
-        if (classToApply === 'incorrect') {
-            //image - incorrect
-            var img = document.createElement("img");
-            img.src = "images/incorrect-image.webp";          
+        if (classToApply === 'incorrect') {         
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
-
+        //Creates 1000ms pause from when a question is selected and the answer is displayed before showing nest question
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         }, 1000);
     });
 });
-
+//Increment score
 incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;

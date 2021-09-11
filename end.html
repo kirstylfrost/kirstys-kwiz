@@ -7,8 +7,11 @@
     <title>Kirstys-Kwiz - Final Score</title>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="stylesheet" href="assets/css/highscores.css"/>
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
   <body>
+    <!--Displays final score-->
     <div class="end-container">
       <div id="home" class="flex-center flex-column">
         <h1>Your Final Score</h1>
@@ -17,6 +20,7 @@
     <div class="end-container">
       <div id="container" class="flex-center flex-column">
         <h1 id="finalScore"></h1>
+        <!--Form to submit final score - top 5 saved-->
         <form>
           <input
             type="text"
@@ -34,12 +38,15 @@
             Save
           </button>
         </form>
+        <!--Buttons to nav to other areas-->
         <a class="btn" href="/game.html">Play Again</a>
-        <a class="btn" href="index.html">Go Home</a>
-        <a class="btn" href="feedback.html">Comments</a>
+        <a class="btn" href="/index.html">Go Home</a>
+        <a class="btn" href="/feedback.html">Comments</a>
       
       </div>
     </div>
     <script src="assets/js/end.js"></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/highscores.js"></script>
   </body>
 </html>
