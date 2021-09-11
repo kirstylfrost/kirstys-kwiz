@@ -7,6 +7,20 @@
   background-color: whitesmoke;
 }
 
+.end-container {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.end-container > * {
+  width: 100%;
+}
+
 /*When hover with cursor, selection appears raised*/
 .choice-container:hover {
   cursor: pointer;

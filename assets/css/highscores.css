@@ -1,3 +1,9 @@
+.h1 {
+  font-size: 5.4rem;
+  color: darkslategray;
+  margin-bottom: 5rem;
+}
+
 #highScoresList {
   list-style: none;
   padding-left: 0;

@@ -40,7 +40,7 @@ h3 {
   font-weight: 500;
 }
 
-/*Utilities*/
+/*Utilities - styling of containers - uniform across all pages*/
 
 .container {
   width: 100vw;
@@ -53,6 +53,20 @@ h3 {
 }
 
 .container > * {
+  width: 100%;
+}
+
+.end-container {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.end-container > * {
   width: 100%;
 }
 

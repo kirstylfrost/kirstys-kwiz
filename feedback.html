@@ -1,54 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Quick Quiz</title>
-        <link rel="stylesheet" href="assets/css/style.css"/>
-        <link rel="stylesheet" href="assets/css/game.css"/>
-      </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kirsty's Kwiz - Feedback</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
 <body>
-    <header>
-        <a href="index.html">
-            <h1 id="title">We'd Love To Hear From You! <i class="far fa-heart"></i></h1>
-        </a>
-        
-    </header>
-        <div id="cover-text">
-            <h2>Kirsty's Kwiz <i class="far fa-heart"></i></h2>
+
+    <div class="end-container">
+        <div id="home" class="flex-center flex-column">
+            <h1>We'd Love to hear from you!</h1>
         </div>
-    <br>    
-    <section class="join-form-title">
-        <h2>Tell us what you think...<i class="far fa-smile"></i> 
-            
+    </div>
+
+    <section class="form-section">
+        <form class="signup-form" method="POST" action="https://formdump.codeinstitute.net/">
+            <label for="fname">First Name</label>
+            <input id="fname" class="text-input" type="text" name="first_name" required />
+            <label for="lname">Last Name</label>
+            <input id="lname" class="text-input" type="text" name="last_name" required />
+            <label for="email">Email Address</label>
+            <input id="email" class="text-input" type="email" name="email_address" required />
+            <label for="comments">Your Comments</label>
+            <input id="text" class="text-input" type="text" name="feedback" required />
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+            <br><br>
+        </form>
     </section>
-    <br>
-    <section class="join-form">
-        <div>
-            <form class="join-form" method="POST" action="https://formdump.codeinstitute.net/">
-                <label for="fname"><h3>First Name</h3></label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..." required>
-
-                <label for="lname"><h3>Last Name</h3></label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..." required>
-
-                <label for="email"><h3>Email Address</h3></label>
-                <input type="text" id="email" name="email-address" placeholder="Your email address..." required>
-
-                </select>
-
-                <input class="join-button" type="submit" value="Yes, please send me a copy of the amazing newsletter!">
-
-            </form>
-        </div>
-    </section>
-   
-    <!-- font awesome script  -->
-    <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
-
+    </form>
+    <a class="btn" href="/game.html">Play Again</a>
+    <a class="btn" href="index.html">Go Home</a>
+    <a class="btn" href="end.html">High Scores</a>
+    </div>
+    </div>
+    <script src="assets/js/end.js"></script>
 </body>
 
 </html>
